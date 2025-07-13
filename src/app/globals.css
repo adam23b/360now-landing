@@ -1,6 +1,6 @@
 :root {
-  --lord-blue: #0A2540; /* Primary: 80% usage - backgrounds, main text */
-  --electric-green: #00FF7F; /* Secondary: 20% usage - accents, highlights */
+  --lord-blue: #2B3C51; /* Primary: 80% usage - backgrounds, main text */
+  --electric-green: #41F0BC; /* Secondary: 20% usage - accents, highlights */
   --font-inter: 'Inter', sans-serif;
   --font-goldman: 'Goldman', sans-serif;
 }
@@ -20,7 +20,7 @@ h1, h2 {
 
 /* Enhanced button with gradient and hover effect */
 button {
-  background: linear-gradient(135deg, var(--electric-green) 0%, #00CC66 100%); /* Subtle green gradient for energy */
+  background: linear-gradient(135deg, var(--electric-green) 0%, #32C093 100%); /* Adjusted gradient for depth */
   color: var(--lord-blue);
   border: none;
   padding: 12px 24px;
@@ -29,19 +29,19 @@ button {
   font-weight: bold;
   font-family: var(--font-goldman);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 255, 127, 0.2); /* Subtle green glow */
+  box-shadow: 0 4px 8px rgba(65, 240, 188, 0.2); /* Subtle green glow */
 }
 
 button:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 255, 127, 0.3);
+  box-shadow: 0 6px 12px rgba(65, 240, 188, 0.3);
 }
 
 /* Input with green border focus */
 input {
   background-color: white;
   color: var(--lord-blue);
-  border: 2px solid rgba(0, 255, 127, 0.3); /* Faint green border */
+  border: 2px solid rgba(65, 240, 188, 0.3); /* Faint green border */
   padding: 12px;
   border-radius: 8px;
   transition: border-color 0.3s ease;
@@ -60,13 +60,15 @@ input:focus {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--electric-green) 0%, #00CC66 100%);
+  background: linear-gradient(135deg, var(--electric-green) 0%, #32C093 100%);
   color: var(--lord-blue);
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   animation: fadeInOut 5s ease-in-out;
   z-index: 1000;
+  text-align: center;
+  max-width: 80%;
 }
 
 @keyframes fadeInOut {
@@ -82,7 +84,7 @@ input:focus {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   padding: 20px;
   position: relative;
   overflow: hidden;
@@ -95,7 +97,7 @@ input:focus {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, rgba(0, 255, 127, 0.1) 0%, transparent 70%); /* Subtle green glow in center */
+  background: radial-gradient(circle at center, rgba(65, 240, 188, 0.1) 0%, transparent 70%); /* Subtle green glow in center */
   z-index: -1;
 }
 
@@ -106,7 +108,34 @@ input:focus {
   }
   p {
     font-size: 1rem;
-    padding: 0 10px;
+    padding: 0 15px;
+    max-width: 90%;
+  }
+  form {
+    max-width: 90%;
+  }
+  button {
+    padding: 10px 20px;
+  }
+  .popup {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  input {
+    max-width: 100%;
+  }
+  .logo {
+    width: 150px;
+    height: auto;
   }
 }
 
