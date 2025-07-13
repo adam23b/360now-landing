@@ -39,14 +39,15 @@ export default function Home() {
       <h1 
         className="fade-in" 
         style={{ 
-          fontSize: '3rem', 
-          margin: '20px 0', 
-          color: 'var(--electric-green)', 
-          textShadow: '0 2px 4px rgba(65, 240, 188, 0.2)' /* Subtle green shadow for disruption */
-        }}
-      >
-        Watch This Space
-      </h1>
+        fontSize: '3rem', 
+        margin: '20px 0', 
+        color: 'var(--electric-green)', 
+        textShadow: '0 2px 4px rgba(65, 240, 188, 0.2)',
+        textAlign: 'center' /* Add this for explicit centering */
+  }}
+>
+  Watch This Space
+</h1>
       <p 
         className="fade-in" 
         style={{ 
@@ -57,7 +58,7 @@ export default function Home() {
           lineHeight: '1.6' 
         }}
       >
-        At 360now, we are disrupting feedback with bold insights that drive real growth. Stay tuned for a platform full of strength and personality.
+        At 360now, we&apos;re disrupting feedback with bold insights that drive real growth. Stay tuned for a platform full of strength and personality.
       </p>
       <form 
         onSubmit={handleSubmit} 
@@ -86,7 +87,7 @@ export default function Home() {
       </form>
       {showPopup && (
         <div className="popup">
-          Thank you for your interest! We will be in touch soon with updates on 360now.
+          Thank you for your interest! We&apos;ll be in touch soon with updates on 360now.
         </div>
       )}
     </div>
