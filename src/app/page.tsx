@@ -31,7 +31,7 @@ export default function Home() {
       <Image src="/logo.png" alt="360now Logo" width={200} height={50} />
       <h1 style={{ fontSize: '3rem', margin: '20px 0', color: 'var(--electric-green)' }}>Watch This Space</h1>
       <p style={{ fontSize: '1.2rem', textAlign: 'center', maxWidth: '600px', marginBottom: '40px' }}>
-        At 360now, we're disrupting feedback with bold, emotional insights that drive real growth. Stay tuned for a platform full of strength and personality – the perfect blend of professional edge and subtle irregularity.
+        At 360now, we are disrupting feedback with bold insights that drive real growth. Stay tuned for a platform full of strength and personality.
       </p>
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
         <label style={{ fontSize: '1rem' }}>Be one of the first to experience the revolution:</label>
@@ -48,7 +48,7 @@ export default function Home() {
       </form>
       {showPopup && (
         <div style={{ position: 'fixed', top: '20px', backgroundColor: 'var(--electric-green)', color: 'var(--lord-blue)', padding: '20px', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0,0,0,0.2)' }}>
-          Thank you for your interest! We'll be in touch soon with updates on 360now.
+          Thank you for your interest! We will be in touch soon with updates on 360now.
         </div>
       )}
     </div>
