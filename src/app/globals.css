@@ -1,26 +1,121 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --lord-blue: #0A2540; /* Primary: 80% usage - backgrounds, main text */
+  --electric-green: #00FF7F; /* Secondary: 20% usage - accents, highlights */
+  --font-inter: 'Inter', sans-serif;
+  --font-goldman: 'Goldman', sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--lord-blue);
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-inter);
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h1, h2 {
+  font-family: var(--font-goldman);
+}
+
+/* Enhanced button with gradient and hover effect */
+button {
+  background: linear-gradient(135deg, var(--electric-green) 0%, #00CC66 100%); /* Subtle green gradient for energy */
+  color: var(--lord-blue);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: var(--font-goldman);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 255, 127, 0.2); /* Subtle green glow */
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 255, 127, 0.3);
+}
+
+/* Input with green border focus */
+input {
+  background-color: white;
+  color: var(--lord-blue);
+  border: 2px solid rgba(0, 255, 127, 0.3); /* Faint green border */
+  padding: 12px;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+input:focus {
+  border-color: var(--electric-green);
+  outline: none;
+}
+
+/* Popup with animation */
+.popup {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--electric-green) 0%, #00CC66 100%);
+  color: var(--lord-blue);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  animation: fadeInOut 5s ease-in-out;
+  z-index: 1000;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, -20px); }
+  10% { opacity: 1; transform: translate(-50%, 0); }
+  90% { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; transform: translate(-50%, -20px); }
+}
+
+/* Container with subtle gradient overlay for depth */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0, 255, 127, 0.1) 0%, transparent 70%); /* Subtle green glow in center */
+  z-index: -1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+}
+
+/* Fade-in animation for elements */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

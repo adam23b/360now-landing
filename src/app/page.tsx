@@ -27,28 +27,66 @@ export default function Home() {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', padding: '20px' }}>
-      <Image src="/logo.png" alt="360now Logo" width={200} height={50} />
-      <h1 style={{ fontSize: '3rem', margin: '20px 0', color: 'var(--electric-green)' }}>Watch This Space</h1>
-      <p style={{ fontSize: '1.2rem', textAlign: 'center', maxWidth: '600px', marginBottom: '40px' }}>
-        At 360now, we are disrupting feedback with bold insights that drive real growth. Stay tuned for a platform full of strength and personality.
+    <div className="container">
+      <Image 
+        src="/logo2.svg" 
+        alt="360now Logo" 
+        width={200} 
+        height={50} 
+        className="fade-in" 
+        style={{ marginBottom: '20px' }} 
+      />
+      <h1 
+        className="fade-in" 
+        style={{ 
+          fontSize: '3rem', 
+          margin: '20px 0', 
+          color: 'var(--electric-green)', 
+          textShadow: '0 2px 4px rgba(0, 255, 127, 0.2)' /* Subtle green shadow for disruption */
+        }}
+      >
+        Watch This Space
+      </h1>
+      <p 
+        className="fade-in" 
+        style={{ 
+          fontSize: '1.2rem', 
+          textAlign: 'center', 
+          maxWidth: '600px', 
+          marginBottom: '40px', 
+          lineHeight: '1.6' 
+        }}
+      >
+        At 360now, we&apos;re disrupting feedback with bold insights that drive real growth. Stay tuned for a platform full of strength and personality.
       </p>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
-        <label style={{ fontSize: '1rem' }}>Be one of the first to experience the revolution:</label>
+      <form 
+        onSubmit={handleSubmit} 
+        className="fade-in" 
+        style={{ 
+          display: 'flex', 
+          flexDirection: 'column', 
+          alignItems: 'center', 
+          gap: '15px', 
+          width: '100%', 
+          maxWidth: '400px' 
+        }}
+      >
+        <label style={{ fontSize: '1rem', fontFamily: 'var(--font-goldman)' }}>
+          Be one of the first to experience the revolution:
+        </label>
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
           required
-          style={{ width: '300px' }}
         />
         <button type="submit">Join the Waitlist</button>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+        {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
       </form>
       {showPopup && (
-        <div style={{ position: 'fixed', top: '20px', backgroundColor: 'var(--electric-green)', color: 'var(--lord-blue)', padding: '20px', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0,0,0,0.2)' }}>
-          Thank you for your interest! We will be in touch soon with updates on 360now.
+        <div className="popup">
+          Thank you for your interest! We&apos;ll be in touch soon with updates on 360now.
         </div>
       )}
     </div>
